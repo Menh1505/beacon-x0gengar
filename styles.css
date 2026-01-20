@@ -1,0 +1,328 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 1200px;
+    aspect-ratio: 5 / 4;
+    display: grid;
+    grid-template-rows: 3fr 2fr;
+    grid-template-columns: 1fr 1fr 2fr;
+    gap: clamp(5px, 2vw, 10px);
+    background: rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 20px;
+}
+
+/* Hero Card - chiếm 60% phía trên */
+.hero-cover {
+    grid-row: 1 / 2;
+    grid-column: 1 / 4;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-card {
+    width: 100%;
+    height: 100%;
+    background: white;
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    clip-path: path("M274.845 0.5H1170C1175.25 0.500005 1179.5 4.7533 1179.5 10V458.428C1179.5 463.663 1175.26 467.912 1170.03 467.927L976.08 468.488C973.35 468.496 970.729 469.567 968.775 471.475L889.564 548.798C887.79 550.53 885.408 551.5 882.929 551.5H10C4.7533 551.5 0.5 547.247 0.5 542V93.9443L0.512695 93.457C0.765375 88.457 4.88477 84.4726 9.94727 84.4443L175.19 83.5215C177.768 83.5071 180.251 82.5442 182.165 80.8174L268.48 2.94629C270.226 1.37157 272.494 0.5 274.845 0.5Z");
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-left {
+    flex-shrink: 0;
+}
+
+.hero-left img {
+    position: absolute;
+    top: 30px;
+    left: 100px;
+    max-width: 600px;
+    max-height: 600px;
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+}
+
+.hero-right {
+    position: absolute;
+    right: 50px;
+    top: 200px;
+    flex: 1;
+}
+
+.hero-right h1 {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 800;
+    color: #2d3748;
+    margin: 0;
+    line-height: 1;
+}
+
+.hero-button {
+    position: absolute;
+    height: 76px;
+    width: 284px;
+    bottom: 5px;
+    right: -8px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    clip-path: path("M71.1055 2.67857C72.9559 0.957019 75.3896 0 77.917 0H266.295C271.818 0 276.295 4.47715 276.295 10V66C276.295 71.5228 271.818 76 266.295 76H5.00998C0.467985 76 -1.72116 70.4331 1.60423 67.3393L71.1055 2.67857Z");
+}
+
+.hero-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.hero-button:active {
+    transform: translateY(0);
+}
+
+.hero-title {
+    position: absolute;
+    height: 79px;
+    width: 263px;
+    top: 0px;
+    left: 0px;
+    background: rgb(0, 0, 0);
+    clip-path: path("M0 20C0 8.9543 8.9543 0 20 0H257.866C259.689 0 260.562 2.23963 259.219 3.47289L179.869 76.3644C178.024 78.0594 175.61 79 173.104 79H10C4.47715 79 0 74.5228 0 69V20Z");
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #667eea;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.name {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin: 0;
+}
+
+.bio {
+    font-size: 1.1rem;
+    color: #718096;
+    max-width: 500px;
+    line-height: 1.6;
+}
+
+/* Card A - TikTok */
+.card-a {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    background: #ED73EA;
+}
+
+/* Card B - YouTube */
+.card-b {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    background: #B977B5;
+}
+
+/* Card C - Messaging Apps */
+.card-c {
+    grid-row: 2 / 3;
+    grid-column: 3 / 4;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0px;
+    justify-content: center;
+    align-content: center;
+    background: #93A3F3;
+}
+
+
+.card-c > a {
+    flex: 0 0 calc(33.333% - 10px);
+    width: 250px;
+    padding: 0px;
+    border-radius: 20px;
+    border: 10px;
+    border-width: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: 500;
+    color: rgb(0, 0, 0);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.card-c > a img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.card-c > a span {
+    font-size: 0.9rem;
+}
+
+.card-c > a:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.tiktok {
+    background: #C4C4C4;
+}
+.youtube {
+    background: #FFC0C0;
+}
+.discord {
+    background: #5C6BC0;
+}
+.telegram {
+    background: #C5ECFF;
+}
+.facebook {
+    background: #94C3FF;
+}
+.twitter {
+    background: #C4C4C4;
+}
+/* Card General Styling */
+.card {
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    color: #2d3748;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #718096;
+    font-size: 1rem;
+}
+
+/* Messaging Apps Styling */
+.messaging-apps {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.app-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px;
+    background: #f7fafc;
+    border-radius: 12px;
+    transition: background 0.3s ease;
+}
+
+.app-item:hover {
+    background: #edf2f7;
+}
+
+.app-icon {
+    font-size: 1.5rem;
+}
+
+.app-item span {
+    font-size: 1rem;
+    color: #2d3748;
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        grid-template-rows: auto;
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .hero-card {
+        grid-row: auto;
+        grid-column: 1;
+    }
+
+    .card-a, .card-b, .card-c {
+        grid-row: auto;
+        grid-column: 1;
+    }
+
+    .name {
+        font-size: 2rem;
+    }
+
+    .bio {
+        font-size: 1rem;
+    }
+}
